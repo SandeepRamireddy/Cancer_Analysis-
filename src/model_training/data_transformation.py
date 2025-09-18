@@ -18,12 +18,15 @@ class DataTransformer:
         # Encode target
         x_train["diagnosis"] = [1 if i == "M" else 0 for i in x_train["diagnosis"]]
         y_train = x_train["diagnosis"]
+        x_train_data = x_train.drop('diagnosis',axis =1)
         x_test["diagnosis"] = [1 if i == "M" else 0 for i in x_test["diagnosis"]]
         y_test = x_test["diagnosis"]
+        x_test_data = x_test.drop('diagnosis',axis =1)
+        
 
         # Scale
-        x_train_scaled = self.scaler.fit_transform(x_train)
-        x_test_scaled = self.scaler.transform(x_test)
+        x_train_scaled = self.scaler.fit_transform(x_train_data)
+        x_test_scaled = self.scaler.transform(x_test_data)
 
         # Save scaler in artifacts
         base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))

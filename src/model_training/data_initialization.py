@@ -33,7 +33,7 @@ def split_data(raw_file: str):
     #drop columns
     df = raw_df.drop(['id','Unnamed: 32'], axis=1)
     # Train-test split
-    train_df, test_df = train_test_split(df, test_size=0.3, random_state=42)
+    train_df, test_df = train_test_split(df, test_size=0.2, random_state=42)
 
     # Save files
     train_file = os.path.join(data_dir, "train.csv")

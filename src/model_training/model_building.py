@@ -16,11 +16,14 @@ from src.model_training.data_transformation import DataTransformer
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
 def main():
-    # ========================
     # 1. Data Transformation
-    # ========================
     transformer = DataTransformer()
     x_train, x_test, y_train, y_test = transformer.transform_and_save()
+
+    print(x_train)
+    print(x_test)
+    print(y_train)
+    print(y_test)
 
     # ========================
     # 2. Define Models + Grids
@@ -74,6 +77,7 @@ def main():
         y_proba = best_model.predict_proba(x_test)[:, 1] if hasattr(best_model, "predict_proba") else None
 
         acc = accuracy_score(y_test, y_pred)
+        print(acc)
         prec = precision_score(y_test, y_pred)
         rec = recall_score(y_test, y_pred)
         f1 = f1_score(y_test, y_pred)
