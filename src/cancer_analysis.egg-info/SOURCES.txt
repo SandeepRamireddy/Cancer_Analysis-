@@ -5,6 +5,9 @@ src/cancer_analysis.egg-info/SOURCES.txt
 src/cancer_analysis.egg-info/dependency_links.txt
 src/cancer_analysis.egg-info/requires.txt
 src/cancer_analysis.egg-info/top_level.txt
+src/model_inferencing/__init__.py
+src/model_inferencing/api.py
+src/model_inferencing/inference.py
 src/model_training/__init__.py
 src/model_training/data_initialization.py
 src/model_training/data_transformation.py

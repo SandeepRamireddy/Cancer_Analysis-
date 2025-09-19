@@ -15,7 +15,7 @@ from src.model_training.data_transformation import DataTransformer
 # import sys, os
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
-def main():
+def model_training():
     # 1. Data Transformation
     transformer = DataTransformer()
     x_train, x_test, y_train, y_test = transformer.transform_and_save()
@@ -119,6 +119,3 @@ def main():
 
     print(f"Best model saved at {model_path}")
 
-
-if __name__ == "__main__":
-    main()
